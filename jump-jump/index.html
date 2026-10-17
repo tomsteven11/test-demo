@@ -1,0 +1,55 @@
+<!DOCTYPE html>
+<html lang="zh-CN">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=1, user-scalable=no, viewport-fit=cover">
+  <meta name="theme-color" content="#cfe8ff">
+  <title>跳一跳</title>
+  <link rel="stylesheet" href="style.css">
+</head>
+<body>
+  <main id="app">
+    <canvas id="game" aria-label="跳一跳游戏画布"></canvas>
+
+    <div id="hud" class="hidden">
+      <div id="score" aria-live="polite">0</div>
+      <div id="combo" class="hidden">连击 ×2</div>
+    </div>
+
+    <div id="best-pill" class="hidden">最高 <b id="best-live">0</b></div>
+
+    <button id="mute" class="icon-btn" type="button" aria-label="音效开关">
+      <svg class="on" viewBox="0 0 24 24" width="22" height="22" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M11 5 6 9H3v6h3l5 4z"/><path d="M15.5 8.5a5 5 0 0 1 0 7"/><path d="M18.5 5.5a9 9 0 0 1 0 13"/></svg>
+      <svg class="off" viewBox="0 0 24 24" width="22" height="22" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M11 5 6 9H3v6h3l5 4z"/><path d="m16 9 6 6"/><path d="m22 9-6 6"/></svg>
+    </button>
+
+    <div id="hint" class="hidden">按住屏幕蓄力，松开起跳</div>
+
+    <section id="start" class="overlay">
+      <div class="card">
+        <div class="logo" aria-hidden="true"><i></i><i></i><i></i></div>
+        <h1>跳一跳</h1>
+        <p class="sub">按住蓄力 · 松开起跳 · 落在中心连击加分</p>
+        <button id="btn-start" class="btn" type="button">开始游戏</button>
+        <p class="tip">鼠标 / 触摸 / 空格键</p>
+        <p class="best-line">历史最高 <b id="best-start">0</b></p>
+      </div>
+    </section>
+
+    <section id="over" class="overlay hidden">
+      <div class="card">
+        <h2>游戏结束</h2>
+        <div class="result">
+          <span class="label">本局得分</span>
+          <span id="final-score" class="big">0</span>
+          <span id="new-record" class="badge hidden">新纪录</span>
+        </div>
+        <p class="best-line">历史最高 <b id="best-over">0</b></p>
+        <button id="btn-restart" class="btn" type="button">重新开始</button>
+        <p class="tip">按空格键也可以重新开始</p>
+      </div>
+    </section>
+  </main>
+  <script src="game.js"></script>
+</body>
+</html>
